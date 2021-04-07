@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentAnalyzerService", "DocumentAnalyzerService.csproj", "{37310EAC-F634-471B-AC7B-4B236E122B1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37310EAC-F634-471B-AC7B-4B236E122B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37310EAC-F634-471B-AC7B-4B236E122B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37310EAC-F634-471B-AC7B-4B236E122B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37310EAC-F634-471B-AC7B-4B236E122B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C87135F-31F4-484E-803B-B2F48AD6B2C8}
+	EndGlobalSection
+EndGlobal
