@@ -30,7 +30,8 @@ namespace DocumentAnalyzerServices
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DocumentAnalyzerServices", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DocumentAnalyzerService", Version = "v1" });
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()); //This line
             });
         }
 
@@ -41,7 +42,7 @@ namespace DocumentAnalyzerServices
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DocumentAnalyzerServices v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DocumentAnalyzerService v1"));
             }
 
             app.UseHttpsRedirection();

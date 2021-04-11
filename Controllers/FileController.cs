@@ -21,18 +21,21 @@ namespace DocumentAnalyzerService.Controllers
         }
         
         [HttpGet]
+        [Route("/employees-in-file")]
         public File GetEmployeesInFile(string fileName)
         {
             return new DbManager().GetProcessedFile(fileName);
         }
         
         [HttpGet]
+        [Route("/files")]
         public List<string> GetFiles()
         {
             return new FilePublisher().GetFilesNames();
         }
         
         [HttpPost]
+        [Route("/file")]
         public void PostFile(Blob file)
         {
             new FilePublisher().UploadFile(file);
