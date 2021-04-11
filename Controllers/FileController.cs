@@ -36,9 +36,10 @@ namespace DocumentAnalyzerService.Controllers
         
         [HttpPost]
         [Route("/file")]
-        public void PostFile(Blob file)
+        public void PostFile(File file)
         {
-            new FilePublisher().UploadFile(file);
+            new DbManager().PostProcessedFile(file);
+            //new FilePublisher().UploadFile(file);
         }
     }
 }

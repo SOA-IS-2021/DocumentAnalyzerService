@@ -2,14 +2,14 @@
 {
     public class EmployeeAppearance
     {
-        public EmployeeAppearance(string id, int appearance)
+        public EmployeeAppearance(string name, int appearance)
         {
-            Id = id;
-            Appearance = appearance;
+            this.name = name;
+            this.appearance = appearance;
         }
 
-        public string Id { get; set; }
+        public string name { get; set; }
         
-        public int Appearance { get; set; }
+        public int appearance { get; set; }
     }
 }

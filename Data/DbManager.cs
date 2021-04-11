@@ -31,7 +31,7 @@ namespace DocumentAnalyzerService.Data
          */
         public void PostProcessedFile(File file)
         {
-            MongoManager.Instance.SaveProcessedFile(file);
+            MongoManager.Instance.InsertProcessedFile(file);
         }
     }
 }

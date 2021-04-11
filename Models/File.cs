@@ -8,13 +8,13 @@ namespace DocumentAnalyzerService.Models
     {
         public File(string fileName, List<EmployeeAppearance> employees)
         {
-            FileName = fileName;
-            Employees = employees;
+            this.fileName = fileName;
+            this.employees = employees;
         }
 
-        public string FileName { get; set; }
+        public string fileName { get; set; }
 
         // List of employees 
-        public List<EmployeeAppearance> Employees { get; set; }
+        public List<EmployeeAppearance> employees { get; set; }
     }
 }
