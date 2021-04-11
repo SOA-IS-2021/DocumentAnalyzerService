@@ -4,21 +4,35 @@ using DocumentAnalyzerService.Services;
 
 namespace DocumentAnalyzerService.Data
 {
+    /**
+     * @source: https://qawithexperts.com/article/c-sharp/connect-to-sql-server-in-c-example-using-console-application/178
+     */
     public class DbManager: IDbManager
     {
+        
+        /**
+         * Selects all employees from the SQL Server DB
+         */
         public List<Employee> GetEmployees()
         {
-            throw new System.NotImplementedException();
+            SqlManager.Instance.SelectEmployees();
+            return null;
         }
 
+        /**
+         * Gets the file processed from Mongo DB
+         */
         public File GetProcessedFile(string fileName)
         {
-            throw new System.NotImplementedException();
+            return null;
         }
 
+        /**
+         * Uploads the file to the Mongo DB
+         */
         public void PostProcessedFile(File file)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
