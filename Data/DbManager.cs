@@ -15,16 +15,15 @@ namespace DocumentAnalyzerService.Data
          */
         public List<Employee> GetEmployees()
         {
-            SqlManager.Instance.SelectEmployees();
-            return null;
+            return SqlManager.Instance.SelectEmployees();
         }
 
         /**
          * Gets the file processed from Mongo DB
          */
-        public File GetProcessedFile(string fileName)
+        public string GetProcessedFile(string fileName)
         {
-            return null;
+            return MongoManager.Instance.FindProcessedFile(fileName);
         }
 
         /**
@@ -32,7 +31,7 @@ namespace DocumentAnalyzerService.Data
          */
         public void PostProcessedFile(File file)
         {
-            
+            MongoManager.Instance.SaveProcessedFile(file);
         }
     }
 }

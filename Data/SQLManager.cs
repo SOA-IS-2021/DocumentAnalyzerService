@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Text;
+using DocumentAnalyzerService.Models;
 
 namespace DocumentAnalyzerService.Data
 {
@@ -10,7 +12,7 @@ namespace DocumentAnalyzerService.Data
         public static readonly SqlManager Instance = new SqlManager();
         
         private const string Datasource = @"NEPTUNE\MSSQLSERVER"; // your server
-        private const string Database = "analyzer"; // your database name
+        private const string Database = "analyzerdb"; // your database name
         private const string Username = "sa"; // username of server to connect
         private const string Password = "1234"; // password
         
@@ -23,7 +25,7 @@ namespace DocumentAnalyzerService.Data
         /**
          * Selects all employees from the SQL Server DB
          */
-        public void SelectEmployees()
+        public List<Employee> SelectEmployees()
         {
             var cnn = new SqlConnection(ConnectionString);
             cnn.Open();
@@ -46,7 +48,7 @@ namespace DocumentAnalyzerService.Data
             
             cnn.Close();
             
-            return;
+            return null;
         }
     }
 }

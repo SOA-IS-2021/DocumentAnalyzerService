@@ -22,7 +22,7 @@ namespace DocumentAnalyzerService.Controllers
         
         [HttpGet]
         [Route("/employees-in-file")]
-        public File GetEmployeesInFile(string fileName)
+        public string GetEmployeesInFile(string fileName)
         {
             return new DbManager().GetProcessedFile(fileName);
         }

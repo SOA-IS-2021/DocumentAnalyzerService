@@ -10,7 +10,7 @@ namespace DocumentAnalyzerService.Services
         public List<Employee> GetEmployees();
 
         // Returns the file from the Mongo DB
-        public File GetProcessedFile(string fileName);
+        public string GetProcessedFile(string fileName);
 
         // Uploads the file to the Mongo DB
         public void PostProcessedFile(File file);
