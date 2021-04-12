@@ -2,14 +2,14 @@
 {
     public class EmployeeAppearance
     {
-        public EmployeeAppearance(string name, int count)
+        public EmployeeAppearance(string name, int appearance)
         {
-            Name = name;
-            Count = count;
+            this.name = name;
+            this.appearance = appearance;
         }
 
-        public string Name { get; set; }
+        public string name { get; set; }
         
-        public int Count { get; set; }
+        public int appearance { get; set; }
     }
 }
