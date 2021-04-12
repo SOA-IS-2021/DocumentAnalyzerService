@@ -29,9 +29,9 @@ namespace DocumentAnalyzerService.Data
         /**
          * Uploads the file to the Mongo DB
          */
-        public void PostProcessedFile(File file)
+        public void PostProcessedFile(FileProcessed fileProcessed)
         {
-            MongoManager.Instance.InsertProcessedFile(file);
+            MongoManager.Instance.InsertProcessedFile(fileProcessed);
         }
     }
 }

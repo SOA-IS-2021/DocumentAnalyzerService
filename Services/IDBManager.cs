@@ -13,6 +13,6 @@ namespace DocumentAnalyzerService.Services
         public string GetProcessedFile(string fileName);
 
         // Uploads the file to the Mongo DB
-        public void PostProcessedFile(File file);
+        public void PostProcessedFile(FileProcessed fileProcessed);
     }
 }

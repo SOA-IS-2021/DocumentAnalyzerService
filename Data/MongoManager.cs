@@ -33,13 +33,13 @@ namespace DocumentAnalyzerService.Data
         /**
          * Saves the processed file to Mongo DB
          */
-        public void InsertProcessedFile(File file)
+        public void InsertProcessedFile(FileProcessed fileProcessed)
         {
             var client = new MongoClient(ConnectionString);
             var db = client.GetDatabase("analyzerdb");
-            var files = db.GetCollection<File>("files");
+            var files = db.GetCollection<FileProcessed>("files");
             
-            files.InsertOne(file);
+            files.InsertOne(fileProcessed);
         }
     }
 }
