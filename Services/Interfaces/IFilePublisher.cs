@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Reflection.Metadata;
 using DocumentAnalyzerService.Models;
 
-namespace DocumentAnalyzerService.Services
+namespace DocumentAnalyzerService.Services.Interfaces
 {
     // Uploads/downloads files to/from the Azure Object Storage
     public interface IFilePublisher

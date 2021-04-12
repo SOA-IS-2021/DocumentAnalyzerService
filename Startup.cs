@@ -2,6 +2,7 @@ using System.Linq;
 using Azure.Storage.Blobs;
 using DocumentAnalyzerService.Data;
 using DocumentAnalyzerService.Services;
+using DocumentAnalyzerService.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

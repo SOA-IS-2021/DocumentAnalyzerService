@@ -1,20 +1,18 @@
-﻿using System;
-using System.Threading.Tasks;
-using DocumentAnalyzerService.Models;
+﻿using DocumentAnalyzerService.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace DocumentAnalyzerService.Data
+namespace DocumentAnalyzerService.Services
 {
-    public class MongoManager
+    public class MongoService
     {
-        public static readonly MongoManager Instance = new MongoManager();
+        public static readonly MongoService Instance = new MongoService();
         
         // your connection string
         private const string ConnectionString = "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false";
 
         // Private constructor
-        private MongoManager() { }
+        private MongoService() { }
         
         /**
          * Finds the file that matches the fileName

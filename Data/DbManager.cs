@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DocumentAnalyzerService.Models;
 using DocumentAnalyzerService.Services;
+using DocumentAnalyzerService.Services.Interfaces;
 
 namespace DocumentAnalyzerService.Data
 {
@@ -15,7 +16,7 @@ namespace DocumentAnalyzerService.Data
          */
         public List<Employee> GetEmployees()
         {
-            return SqlManager.Instance.SelectEmployees();
+            return SqlService.Instance.SelectEmployees();
         }
 
         /**
@@ -23,7 +24,7 @@ namespace DocumentAnalyzerService.Data
          */
         public string GetProcessedFile(string fileName)
         {
-            return MongoManager.Instance.FindProcessedFile(fileName);
+            return MongoService.Instance.FindProcessedFile(fileName);
         }
 
         /**
@@ -31,7 +32,7 @@ namespace DocumentAnalyzerService.Data
          */
         public void PostProcessedFile(FileProcessed fileProcessed)
         {
-            MongoManager.Instance.InsertProcessedFile(fileProcessed);
+            MongoService.Instance.InsertProcessedFile(fileProcessed);
         }
     }
 }

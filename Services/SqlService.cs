@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Text;
 using DocumentAnalyzerService.Models;
 
-namespace DocumentAnalyzerService.Data
+namespace DocumentAnalyzerService.Services
 {
-    public class SqlManager
+    public class SqlService
     {
-        public static readonly SqlManager Instance = new SqlManager();
+        public static readonly SqlService Instance = new SqlService();
         
         private const string Datasource = @"NEPTUNE\MSSQLSERVER"; // your server
         private const string Database = "analyzerdb"; // your database name
@@ -20,7 +19,7 @@ namespace DocumentAnalyzerService.Data
         private const string ConnectionString = @"Data Source=" + Datasource + ";Initial Catalog=" + Database + ";Persist Security Info=True;User ID=" + Username + ";Password=" + Password;
 
         // Private constructor
-        private SqlManager() { }
+        private SqlService() { }
         
         /**
          * Selects all employees from the SQL Server DB

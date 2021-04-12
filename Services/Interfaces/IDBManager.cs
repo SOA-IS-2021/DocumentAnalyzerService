@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Reflection.Metadata;
 using DocumentAnalyzerService.Models;
 
-namespace DocumentAnalyzerService.Services
+namespace DocumentAnalyzerService.Services.Interfaces
 {
     public interface IDbManager
     {

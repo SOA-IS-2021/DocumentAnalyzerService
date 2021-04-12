@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Azure.Storage.Blobs;
 using DocumentAnalyzerService.Models;
 using DocumentAnalyzerService.Services;
+using DocumentAnalyzerService.Services.Interfaces;
 
 namespace DocumentAnalyzerService.Data
 {

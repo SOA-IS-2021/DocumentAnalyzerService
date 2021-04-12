@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using DocumentAnalyzerService.Models;
-using DocumentAnalyzerService.Services;
+using DocumentAnalyzerService.Services.Interfaces;
 
-namespace DocumentAnalyzerService.Data
+namespace DocumentAnalyzerService.Services
 {
     /**
      * @source: https://blog.docubear.com/c-how-to-read-and-write-to-azure-blob-storage/

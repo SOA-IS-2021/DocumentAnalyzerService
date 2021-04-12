@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using DocumentAnalyzerService.Models;
 
-namespace DocumentAnalyzerService.Services
+namespace DocumentAnalyzerService.Services.Interfaces
 {
     public interface IBlobService
     {
