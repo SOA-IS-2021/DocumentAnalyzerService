@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 using DocumentAnalyzerService.Models;
+using MongoDB.Bson;
 
 namespace DocumentAnalyzerService.Services
 {
+    /**
+     * @source: https://www.guru99.com/c-sharp-access-database.html
+     */
     public class SqlService
     {
         public static readonly SqlService Instance = new SqlService();
         
-        private const string Datasource = @"NEPTUNE\MSSQLSERVER"; // your server
+        private const string Datasource = @"."; // your server
         private const string Database = "analyzerdb"; // your database name
         private const string Username = "sa"; // username of server to connect
         private const string Password = "1234"; // password
@@ -26,6 +30,7 @@ namespace DocumentAnalyzerService.Services
          */
         public List<Employee> SelectEmployees()
         {
+            var result = new List<Employee>();
             var cnn = new SqlConnection(ConnectionString);
             cnn.Open();
             
@@ -38,16 +43,19 @@ namespace DocumentAnalyzerService.Services
             {
                 using (var reader = command.ExecuteReader())
                 {
-                    foreach (var line in reader)
+                    while (reader.Read())
                     {
-                        Console.WriteLine(line);
+                        var id = reader[0] as string;
+                        var name = reader[1] as string;
+                        var employee = new Employee(id, name);
+                        result.Add(employee);
                     }
                 }
             }
             
             cnn.Close();
             
-            return null;
+            return result;
         }
     }
 }

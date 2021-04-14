@@ -27,9 +27,16 @@ namespace DocumentAnalyzerService.Controllers
         {
             return new DbManager().GetProcessedFile(fileName);
         }
+
+        [HttpGet]
+        [Route("/employees-names")]
+        public List<Employee> GetEmployeesNames()
+        {
+            return new DbManager().GetEmployees();
+        }
         
         [HttpGet]
-        [Route("/files-names")]
+        [Route("/processed-files-names")]
         public List<string> GetFilesNames()
         {
             return new FilePublisher().GetFilesNames();
