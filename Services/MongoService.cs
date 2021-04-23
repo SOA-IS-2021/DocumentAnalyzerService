@@ -1,4 +1,5 @@
-﻿using DocumentAnalyzerService.Models;
+﻿using System;
+using DocumentAnalyzerService.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -25,7 +26,8 @@ namespace DocumentAnalyzerService.Services
 
             var filter = Builders<BsonDocument>.Filter.Eq("fileName", fileName);
             var @event = files.Find(filter);
-            return @event.First().ToJson();
+            var result = @event.First();
+            return result[2].ToJson();
         }
 
         /**

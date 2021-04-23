@@ -14,6 +14,8 @@ namespace DocumentAnalyzerService
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -25,6 +27,16 @@ namespace DocumentAnalyzerService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.WithOrigins(
+                            "http://localhost",
+                            "http://localhost:*");
+                    });
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DocumentAnalyzerService", Version = "v1" });
@@ -48,6 +60,8 @@ namespace DocumentAnalyzerService
 
             app.UseRouting();
 
+            app.UseCors(MyAllowSpecificOrigins);
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
