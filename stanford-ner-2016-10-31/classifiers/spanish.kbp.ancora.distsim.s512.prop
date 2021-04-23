@@ -1,0 +1,57 @@
+trainFileList = \
+/u/nlp/data/ner/spanish/3class/ancora.train.conll.3class,\
+/u/nlp/data/ner/spanish/3class/edl15.df.train.3class,\
+/u/nlp/data/ner/spanish/3class/ere15.df.3class,\
+/u/nlp/data/ner/spanish/3class/ere15.3class,\
+/u/nlp/data/ner/spanish/3class/ace07.3class,\
+/u/nlp/data/ner/spanish/3class/ere15.nw.3class,\
+/u/nlp/data/ner/spanish/3class/conll.train.3class,\
+/u/nlp/data/ner/spanish/3class/ldc-nw.train.conll.3class,\
+/u/nlp/data/ner/spanish/3class/ldc-df.train.conll.3class,\
+/u/nlp/data/ner/spanish/3class/edl15.nw.train.3class
+
+serializeTo = /u/nlp/data/ner/spanish/models/spanish.kbp.ancora.distsim.s512.crf.ser.gz
+
+distSimLexicon = /u/nlp/data/spanish/distsim/spanish.spence512.cls
+useDistSim = true
+
+map = word=0,answer=1
+
+useTitle = true
+useSpanishTitle = true
+useClassFeature=true
+useWord=true
+useNGrams=true
+noMidNGrams=true
+usePrev=true
+useNext=true
+useLongSequences=true
+useSequences=true
+usePrevSequences=true
+maxLeft=1
+useTypeSeqs=true
+useTypeSeqs2=true
+useTypeySequences=true
+useOccurrencePatterns=true
+useLastRealWord=true
+useNextRealWord=true
+normalize=true
+wordShape=dan2uselC
+useDisjunctive=true
+disjunctionWidth=5
+#useDisjunctiveShapeInteraction=true
+
+type=crf
+
+saveFeatureIndexToDisk = true
+
+readerAndWriter=edu.stanford.nlp.sequences.ColumnDocumentReaderAndWriter
+
+useObservedSequencesOnly=true
+
+sigma = 1
+useQN = true
+QNsize = 25
+
+# makes it go faster
+featureDiffThresh=0.05
